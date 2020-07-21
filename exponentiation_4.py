@@ -13,10 +13,9 @@ def exponentation(x, y):
     :return: 1771.561
     """
     result = 1
-    for i in range(y):
+    for i in range(abs(y)):
         result *= x
-    print(f'{x} в степени {y} = {result}')
-    # print(f'{x} в степени {y} = {x ** y}')
+    print(f'{x} в степени {y} = {1 / result}')
 
 
 try:

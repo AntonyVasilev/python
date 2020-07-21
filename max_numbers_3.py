@@ -15,6 +15,7 @@ def my_func(a, b, c):
     user_list.remove(min(user_list))
     return user_list[0] + user_list[1]
 
+
 items = []
 for i in range(3):
     items.append(int(input(f'Введите число {i+1}: ')))

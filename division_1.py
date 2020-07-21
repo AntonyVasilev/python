@@ -17,4 +17,8 @@ def num_division(num_1, num_2):
 
 
 num_1, num_2 = input('Введите 2 числа через пробел: ').split()
-num_division(float(num_1), float(num_2))
+
+try:
+    num_division(float(num_1), float(num_2))
+except ValueError:
+    print('Вы ввели не число.')

@@ -20,21 +20,27 @@ def input_numbers():
     num_list = input_list.split()
     for i, item in enumerate(num_list):
         if num_list[i].isdigit():
-            new_list.append(float(item))
+            new_list.append(int(item))
         elif num_list[i].lower() == 'q':
             stop_sign = True
     return new_list, stop_sign
 
-def sum_numbers(*args):
+def sum_numbers(numbers):
     """
-    Функция принимает список чисел и возвращает их сумму.
-    :param args:
-    :return:
+    sum_numbers(список чисел)
+    Функция принимает список чисел, введенных пользователем, и возвращает их сумму.
+    :param numbers: [15, 25, 10]
+    :return: 50
     """
-    pass
+    result = 0
+    for number in numbers:
+        result += number
+    return result
 
-sum = float
-numbers, exit_sign = input_numbers()
+result = int()
+exit_sign = False
 
-print(numbers)
-print(exit_sign)
+while exit_sign != True:
+    numbers, exit_sign = input_numbers()
+    result += sum_numbers(numbers)
+    print(f'Сумма введенных чисел равна {result}')
