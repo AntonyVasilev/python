@@ -8,5 +8,4 @@
 
 from functools import reduce
 
-result = lambda x, y: x * y
-print(reduce(result, [el for el in range(100, 1001, 2)]))
+print(reduce(lambda x, y: x * y, [el for el in range(100, 1001, 2)]))

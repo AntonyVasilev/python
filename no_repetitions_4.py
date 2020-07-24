@@ -6,6 +6,5 @@
 Для выполнения задания обязательно использовать генератор.
 """
 
-my_list = [5, 4, 5, 5, 1, 2, 4, 9, 8, 7, 3, 1, 1]
-new_list = [el for el in my_list if my_list.count(el) == 1]
-print(new_list)
+my_list = [5, 4, 5, 5, 1, 2, 7, 9, 8, 7, 3, 1, 1]
+print([el for el in my_list if my_list.count(el) == 1])
