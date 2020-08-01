@@ -14,9 +14,6 @@
 """
 
 result_dict = {}
-lines = []
-key = ''
-
 
 with open('education.txt', encoding='utf-8') as f:
     for line in f:
@@ -24,7 +21,7 @@ with open('education.txt', encoding='utf-8') as f:
         lect = '0' if lect == '-' else lect[:lect.find('(')]
         pract = '0' if pract == '-' else pract[:pract.find('(')]
         lab = '0' if lab == '-' else lab[:lab.find('(')]
-        sum = int(lect) + int(pract) + int(lab)
-        result_dict[key] = sum
+        sum_all = int(lect) + int(pract) + int(lab)
+        result_dict[key] = sum_all
 
 print(result_dict)
