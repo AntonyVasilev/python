@@ -12,25 +12,21 @@ name, surname, position (должность), income (доход). Послед�
 
 
 class Worker:
-    name = str
-    surname = str
-    position = str
-    _income = {'wage': 0, 'bonus': 0}
+
+    def __init__(self, name, surname, position, income):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self.income = income
 
 
 class Position(Worker):
 
-    def get_full_name(self, name, surname, position):
-        self.name = name
-        self.surname = surname
-        self.position = position
-        print(f'{name} {surname} - {position}')
+    def get_full_name(self):
+        print(f'{self.name} {self.surname} - {self.position}')
 
-    def get_total_income(self, name, surname, income):
-        self.name = name
-        self.surname = surname
-        self._income = income
-        print(f'{name} {surname} заработал - {income["wage"] + income["bonus"]:.2f} руб.')
+    def get_total_income(self):
+        print(f'{self.name} {self.surname} заработал - {self.income["wage"] + self.income["bonus"]:.2f} руб.')
 
 
 names = ['Александр', 'Виктор', 'Алексей']
@@ -38,7 +34,7 @@ surnames = ['Иванов', 'Петров', 'Сидоров']
 positions = ['инженер', 'программист', 'аналитик']
 incomes = [{"wage": 120000, "bonus": 50000}, {"wage": 150000, "bonus": 45000}, {"wage": 130000, "bonus": 55000}]
 
-worker = Position()
 for i in range(3):
-    worker.get_full_name(names[i], surnames[i], positions[i])
-    worker.get_total_income(names[i], surnames[i], incomes[i])
+    worker = Position(names[i], surnames[i], positions[i], incomes[i])
+    worker.get_full_name()
+    worker.get_total_income()

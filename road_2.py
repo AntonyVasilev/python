@@ -12,19 +12,19 @@ length (длина), width (ширина). Значения данных атр�
 
 
 class Road:
-    length = float
-    width = float
-    weight = 25
-    thickness = float
 
-    def weight_count(self, length, width, thinkness):
+    weight = 25
+
+    def __init__(self, length, width, thinkness):
         self.length = length
         self.width = width
-        self.thickness = thinkness
-        asphalt_weight = length * width * self.weight * thinkness
+        self.thinkness = thinkness
+
+    def weight_count(self):
+        asphalt_weight = self.length * self.width * self.weight * self.thinkness
         return asphalt_weight
 
 
-road = Road()
+road = Road(15, 10000, 5)
 
-print(f'{road.weight_count(15, 10000, 5) / 1000} т.')
+print(f'{road.weight_count() / 1000} т.')
