@@ -34,7 +34,7 @@ class Matrix:
         self.other_matrix = other.matrix
         result_matrix = deepcopy(self.matrix)
         for i in range(len(self.matrix)):
-            for j in range(len(self.matrix[0])):
+            for j in range(len(self.matrix[i])):
                 result_matrix[i][j] = self.matrix[i][j] + self.other_matrix[i][j]
         return result_matrix
 
