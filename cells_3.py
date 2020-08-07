@@ -32,17 +32,20 @@ class Cell:
     def __init__(self, num_sells):
         self.num_sells = num_sells
 
-    def make_order(self, sells_in_row):
-        self.sells_in_row = sells_in_row
-        cell = ''
-        j = 0
-        for i in range(self.num_sells):
-            j += 1
-            cell += '*'
-            if j == self.sells_in_row:
-                cell += '\n'
-                j = 0
-        return cell
+    def make_order(self, cells_in_row):
+        self.cells_in_row = cells_in_row
+        if type(self.num_sells) == str:
+            return
+        else:
+            cell = ''
+            j = 0
+            for i in range(self.num_sells):
+                j += 1
+                cell += '*'
+                if j == self.cells_in_row:
+                    cell += '\n'
+                    j = 0
+            return cell
 
     def __add__(self, other):
         self.other_cell = other.num_sells
@@ -65,7 +68,7 @@ class Cell:
         return self.num_sells // self.other_cell
 
 
-cell_1 = Cell(9)
+cell_1 = Cell(14)
 cell_2 = Cell(4)
 
 sum_cells = cell_1 + cell_2
