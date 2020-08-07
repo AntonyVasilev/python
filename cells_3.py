@@ -34,7 +34,7 @@ class Cell:
 
     def make_order(self, cells_in_row):
         self.cells_in_row = cells_in_row
-        if type(self.num_sells) == str:
+        if type(self.num_sells) != int:
             return
         else:
             cell = ''
