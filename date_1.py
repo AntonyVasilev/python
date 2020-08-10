@@ -33,9 +33,9 @@ class Date:
             is_day = True
         else:
             is_day = False
-        print(f'Validation result: year - {is_year}, month - {is_month}, day - {is_day}')
+        print(f'Validation result: day - {is_day}, month - {is_month}, year - {is_year}')
 
 
 year, month, day = Date.to_num('2019-02-29')
-print(year, month, day)
+print(f'{day:02}.{month:02}.{year}')
 Date.validation(year, month, day)

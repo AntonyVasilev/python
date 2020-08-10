@@ -27,8 +27,8 @@ num_list = []
 
 while True:
     try:
-        user_input = input('Input number: ')
-        if user_input == 'quit':
+        user_input = input('Input number (stop to quit): ')
+        if user_input == 'stop':
             break
         elif user_input.isdigit():
             num_list.append(int(user_input))
